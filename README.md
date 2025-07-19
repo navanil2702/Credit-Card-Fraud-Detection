@@ -1,224 +1,160 @@
-# FraudShield: AI-Powered Fraud Detection for Digital Payments
+# 🛡️ DataSwat – Jugaadu AI for UPI Fraud Detection
 
-> Helping Indian small businesses fight back against digital payment fraud — with privacy-first AI.
-
----
-
-## 🧠 Introduction
-
-With India's surge in digital payments, particularly UPI, small businesses face growing threats of fraud — but have no affordable defense tools. FraudShield is a lightweight, AI-powered solution that detects fraud using anonymized transactional data (PCA-transformed), making privacy a priority. This project was the **2nd runner-up** at [RACCAM Hackathon 1.0].
+> "Fraud hone ke baad bank bolta hai — ‘Humse na ho payega.’  
+> DataSwat bolta hai — ‘Pehle hi pakad lete hain bhai.’"
 
 ---
 
-## ❗ The Problem (Rohan’s Story)
+## 🤯 Kya Hai Ye?
 
-Meet **Rohan**, a 29-year-old small e-commerce shop owner from Jaipur.
+DataSwat is your **gully-level genius AI** that scans your boring CSV files (yes, with those weird `V1–V28` columns), and tells you:
 
-- He accepts payments mostly via **UPI**, **Google Pay**, and **PhonePe**.
-- His store uses a popular **payment gateway** that batches transaction logs monthly.
-- One day, ₹37,000 vanished via three fraudulent UPI transactions.
-- His **bank refused to take responsibility**, citing insufficient evidence.
+- Bhai, kaun sa transaction **fraud** ho sakta hai
+- Kis customer ko **manual review** chahiye
+- Aur kaun safe hai — jaane do use
 
-**Rohan’s Frustration**: He gets **anonymized CSV reports** (with privacy-protected PCA-transformed fields) from his gateway, but **no tools** to check if anything looks suspicious.
-
-**His Dream**: “Aap bas mujhe bata do kaunse transaction risky hai — aur main us customer ko blacklist kar dunga.”
-
-**His Hesitation**: “I’m not a tech guy. Yeh V1-V28 kya hota hai? Mujhe sirf fraud se bachna hai.”
+All this, without needing any MBA, Excel macros, ya data science ka dard.  
+Just upload your file, dekh lo result, aur kar lo action.
 
 ---
 
-## ✅ The Solution: FraudShield
+## 🧑‍💻 Rohan Ki Kahani (aka Every Indian Merchant Ever)
 
-FraudShield is an AI-based fraud detection platform that:
+> “UPI fraud ho gaya. ₹37,000 gayab.  
+> Bank bola: Sorry sir, prove karo.”  
+> – Rohan, Jaipur (fictional… par real emotion)
 
-- Accepts **anonymized PCA-transformed** credit card or UPI transaction data.
-- Predicts the **likelihood of fraud** using machine learning.
-- Provides **risk categorization** and **actionable alerts** for business owners like Rohan.
+- Rohan runs a chhoti si online dukaan.
+- Gets monthly CSV from Razorpay-type gateway.
+- UPI, GPay, PhonePe sab chalu hai.
+- But **fraud ka koi guard nahi**.
 
----
-
-## 🔑 Key Features
-
-- 🔐 **Secure CSV Upload Interface** (HTTPS-ready)
-- 🤖 **AI-powered Fraud Prediction** using Random Forest
-- 🚦 **Risk Categorization**: Safe / Medium / High
-- 📊 **Performance Metrics** (Precision/Recall on imbalanced data)
-- 🧾 **Exportable Reports** for audit purposes
-- 🔍 **Basic Explainability** via confidence scores
+**Enter: FraudShield**  
+Ek click mein pata chal jaata hai — kaunse transaction suspicious lag rahe hain.
 
 ---
 
-## ⚙️ Technology Stack
+## 🤖 Features Jo Actually Kaam Aate Hain
 
-| Layer        | Tech Used                      |
-|-------------|---------------------------------|
-| ML/Backend   | Python, Scikit-learn, Joblib   |
-| Data         | Pandas, NumPy, StandardScaler  |
-| Frontend     | Streamlit                      |
-| Packaging    | Virtualenv                     |
-
----
-# 🛡️ FraudShield – ML-powered UPI Fraud Detection (PCA-Compatible)
-
-> "Jitna smart aapka dukan, utna secure hona chahiye digital payment."  
-> – Rohan, Jaipur (fictional persona, but every Indian seller's reality)
-
-FraudShield is a lightweight, privacy-respecting fraud detection MVP that works directly with **PCA-transformed anonymized financial data**, empowering **micro-entrepreneurs and small business owners** in India to **detect suspicious UPI transactions**, even if they don’t have a data science background.
+| Feature | Samjhauta-free Breakdown |
+|--------|--------------------------|
+| 🔐 **CSV Upload** | Drag karo, drop karo, ho gaya |
+| 🧠 **ML Model** | Trained on real fraud data, fitted with RandomForest |
+| 🚥 **Risk Level** | ✅ Safe, ⚠️ Medium Risk, 🚨 High Risk |
+| 📊 **Charts** | For logon jo visuals ke bina digest nahi karte |
+| 📁 **Download Option** | Report le jao, boss ko dikhao |
 
 ---
 
-## ▶️ How to Use
+## 🔍 Real Use-Case: UPI Scams on the Rise
 
-1. **Open the app**: [http://localhost:8501](http://localhost:8501)
-2. **Upload your CSV file**  
-   - Must contain PCA features (`V1–V28`) and `Amount`, `Time`, `Class` (if available).
-3. **Click "Run Prediction"**
-4. **View table** showing high-risk transactions (fraud likelihood).
-5. **Download results as CSV** for investigation or reporting.
+As per **RBI**, UPI frauds have tripled.  
+Par chhote merchants ke paas **zero tools**.  
+FraudShield unke liye hai — *Not fancy dashboards. Just utility.*
 
 ---
 
-## 🔍 Real-World Relevance: UPI Fraud in India
+## ⚙️ Tech Stack (Nerds ke liye)
 
-According to **RBI’s 2024 Digital Payments Report**, **UPI fraud has tripled in the last 2 years**.  
-Small retailers & merchants lack tools to detect this — *FraudShield bridges this gap*.
-
-### 👤 Who it’s for:
-- Kirana stores using Paytm, PhonePe, BharatPe
-- Small e-commerce vendors
-- Shop owners receiving anonymized logs from UPI payment gateways
-
----
-
-## 📉 Model Performance (Random Forest)
-
-| Metric        | Value (Test Set) |
-|---------------|------------------|
-| Recall (Fraud)| 76.35%           |
-| Precision     | 95.76%           |
-| F1-Score      | 84.96%           |
-| AUC-ROC       | 0.93             |
-
-> Currently optimized for high **recall** to reduce missed frauds.  
-> Future iterations will include **XGBoost / LightGBM** & **auto-tuning**.
+| Layer     | Tools             |
+|-----------|-------------------|
+| ML Model  | scikit-learn (RandomForest) |
+| Preproc   | PCA-transformed data + Scaler |
+| App       | Streamlit (simple UI) |
+| Export    | Pandas, Numpy, CSV |
 
 ---
 
-## 💡 What Makes It Different (USP)
+## 📦 CSV Format (Important, warna model confuse hoga)
 
-- ✅ Works **even with anonymized (PCA) datasets**
-- ✅ Designed for **non-technical users** (no jargon)
-- ✅ Shows **only at-risk transactions**, not all data
-- ✅ Provides **simple verdicts**: "Safe" or "Suspicious"
-- ✅ Designed with **Bharat-first mindset**, not enterprise jargon
-- ✅ Respects **data privacy laws** (GDPR, PCI DSS)
+- Required Columns: `Time`, `V1–V28`, `Amount`
+- Optional: `Class` (0 = legit, 1 = fraud)
+- No missing values plz 🙏
 
 ---
 
-## 📦 File Format Requirements
+## 💻 Kaise Use Karein?
 
-Your CSV file should contain:
-- Columns: `Time`, `V1–V28` (PCA), `Amount`
-- Optional: `Class` (0 = safe, 1 = fraud) if doing analysis
-- No missing values
-
-**Note:** Future support will allow raw transaction data (merchant ID, device, location, etc.)
-
----
-
-## 📋 Step-by-Step User Flow
-
-1. **Open app** → Simple welcome screen
-2. **Upload file** (drag-and-drop or button)
-3. **Click Predict** → Backend runs model
-4. **Table View**: Only suspicious rows shown, sorted by fraud score
-5. **Instructions panel**:
-   - "What does this mean?"
-   - "What should I do?"
-   - "How to confirm with customer?"
-6. **Download CSV**
-7. **Take manual action**: Contact customer / freeze account / report to UPI partner
+1. `streamlit run app.py` chalao
+2. CSV upload karo
+3. Output table mein dekho:
+   - Risk Level
+   - Fraud probability
+4. Manual review ya escalation karo
 
 ---
 
-## 📘 Fraud Rulebook (to double-verify)
+## 📉 Model Performance (Jitna bola hai, utna deliver karta hai)
 
-**Basic Risk Checklist:**
+| Metric        | Score |
+|---------------|-------|
+| Recall (fraud)| 76.3% |
+| Precision     | 95.7% |
+| F1-score      | 84.9% |
+| AUC-ROC       | 0.93  |
 
-| Checkpoint                        | Recommended Action        |
-|----------------------------------|---------------------------|
-| High fraud score (>0.8)          | Flag for review           |
-| High Amount (>₹10,000)           | Cross-verify payment ID   |
-| Frequent transactions in minutes | Pause & call customer     |
-| Amount mismatch from usual value| Check past records        |
-| Repeated failed UPI IDs          | Notify payment partner    |
-
-Add this rulebook **in the UI as sidebar/toggle section**.
+> Apni taraf se toh full try maara hai.  
+> Next upgrade mein XGBoost bhi aa raha hai.
 
 ---
 
-## 🎨 UX/Design Notes
+## 📘 Fraud Handling Rulebook (Tandoor Garam Tip Type)
 
-- Show **only suspicious transactions**
-- **Table view first**, not charts
-- Simple colors: 🟢 Safe | 🔴 Suspicious
-- Button: "Download Suspicious Transactions"
-- No unnecessary graphs unless asked
-- **Legend + Rulebook toggle** always visible
+| Situation                  | Kya Karna Chahiye             |
+|---------------------------|-------------------------------|
+| Fraud score > 0.8         | Order hold + escalate karna  |
+| High amount > ₹10,000     | Bhai, double check toh banta hai |
+| Rapid fire UPI attempts   | Suspicious — alert karo      |
+| Weird customer behavior   | Manual review must            |
 
----
-
-## 🚧 Current Limitations (Truthfully Acknowledged)
-
-🔴 Manual upload only – no real-time detection  
-🔴 PCA-only format supported – raw data not accepted  
-🔴 No user login/dashboard yet  
-🔴 No real-time blocking or alerting  
-🔴 No graph/identity fraud logic  
-🔴 No explainability engine (coming soon)  
-🔴 Model not auto-improving (no live retraining pipeline)
+> Ye rulebook app mein sidebar mein mil jaayega, dhoondhne ki zarurat nahi.
 
 ---
 
-## 🚀 Future Roadmap
+## 😂 Why It Stands Out (Other than the sarcasm)
 
-| Area              | Feature Planned                           |
-|-------------------|--------------------------------------------|
-| Data Input        | 📥 Real-time API from Razorpay, Paytm Biz |
-| Compatibility     | 📊 Add support for raw features via ETL    |
-| Explainability    | 🤯 Add SHAP/LIME to show *why* risky      |
-| Deployment        | ☁️ Docker + HuggingFace Space or Render   |
-| UX & Dashboard    | 🧑‍💻 Add login, transaction history, trends |
-| Advanced ML       | 🧠 Graph-based fraud detection             |
-
+- ✅ Works on **anonymized** PCA data (privacy = ✅)
+- ✅ Built for **Rohan**, not Reliance
+- ✅ Easy interface — no scary dashboards
+- ✅ Gives verdicts, not confusion
 
 ---
 
-## 🧠 Bonus Impressiveness Points
+## 🚧 Honest Confessions (Jhoothi tareef nahi karte yaar)
 
-✅ RBI fraud stats directly used  
-✅ Honest about what’s not done (growth mindset)  
-✅ Docker-ready architecture  
-✅ Bharat persona-first product  
-✅ Clear MVP → Product pathway
+- ❌ Real-time detection? Nahi, abhi CSV-only hai
+- ❌ Raw data support? Aayega, par abhi nahi
+- ❌ Login/dashboard? MVP mein nahi, final product mein hoga
+- ❌ Alert system? Sirf visual alert hai, no SMS/Email yet
+- ❌ No SHAP explainability — par plan mein hai
 
 ---
 
-> **FraudShield protects the backbone of Indian digital economy – the small merchants.**
+## 🔮 Coming Soon (InshaALLH, ya jab bandwidth mile)
 
-## 📦 Setup & Installation
+| Feature                    | Status     |
+|----------------------------|------------|
+| Real-time API              | ⏳ Working on it |
+| Raw feature support        | 🔜 In roadmap |
+| Explainable AI (SHAP)      | 😇 Patience bhai |
+| User auth & dashboard      | 🧑‍💼 Under dev |
+| UPI-partner integration    | 🙏 Wishful |
+
+---
+
+## 🔧 Installation Guide (5-minute jugaad)
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/prasannajeet/FraudShield.git
-cd FraudShield
+# Clone repo
+git clone https://github.com/prasannajeet/DataSwat.git
+cd DataSwat
 
-# 2. Create a virtual environment
+# Virtual env banayein
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# 3. Install dependencies
+# Dependencies install karo
 pip install -r requirements.txt
 
-# 4. Run the app
+# Chalu karo Streamlit
 streamlit run app.py
